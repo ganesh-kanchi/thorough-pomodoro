@@ -1,5 +1,5 @@
-import { Navbar } from "../components/Navbar/Navbar"
-import Timer from "../assets/technique.png"
+import { Navbar } from "../../components/Navbar/Navbar"
+import Timer from "../../assets/technique.png"
 import "./Homepage.css"
 
 export const Homepage = () => {
