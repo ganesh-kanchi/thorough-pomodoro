@@ -1,0 +1,27 @@
+.tasks-page-content{
+    text-align: left;
+    width: 90vw;
+    margin: 2rem auto 2rem auto;
+}
+
+.tasks-section{
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    min-height: calc(100vh - 18rem);
+}
+
+.tasks-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tasks-page-content .page-sub-heading{
+    margin-bottom: 1rem;
+}
+
+.tasks-page-content .page-main-heading{
+    margin-bottom: 1rem;
+}
