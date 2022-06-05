@@ -1,0 +1,22 @@
+.main-header{
+    width: 100%;
+    height: 4rem;
+    background-color: skyblue;
+    display: flex;
+    padding: 0 2rem 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: sticky;
+}
+
+.main-navigation .nav-link{
+    text-decoration: none;
+}
+
+.brand-tag{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    padding: 0;
+    text-decoration: none;
+}
