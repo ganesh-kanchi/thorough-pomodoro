@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 export const Modal = ({modalSwitch, setTasks}) => {
     const [ taskInfo, setTaskInfo ] = useState({
-        id: uuidv4(),
+        id: "",
         taskTitle: "",
         taskDescription: "",
         focusDuration: 45,
@@ -34,7 +34,7 @@ export const Modal = ({modalSwitch, setTasks}) => {
 
     const addTaskHandler = (e) => {
         e.preventDefault();
-        setTasks(prevVal => [...prevVal, taskInfo])
+        setTasks(prevVal => [...prevVal, {...taskInfo, id: uuidv4()}])
         modalSwitch()
     }
 
