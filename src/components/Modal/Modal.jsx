@@ -1,8 +1,45 @@
+import { useState } from "react";
 import "./Modal.css";
+import { v4 as uuidv4 } from "uuid";
 
-export const Modal = ({modalSwitch}) => {
+export const Modal = ({modalSwitch, setTasks}) => {
+    const [ taskInfo, setTaskInfo ] = useState({
+        id: uuidv4(),
+        taskTitle: "",
+        taskDescription: "",
+        focusDuration: 45,
+        breakDuration: 15
+    })
+
+    const {taskTitle, taskDescription, focusDuration, breakDuration} = taskInfo;
+
+    const taskOnChangeHandler = (e) => {
+        switch (e.target.name) {
+            case "task-name":
+                setTaskInfo(prevVal => ({...prevVal, taskTitle: e.target.value}))
+                break;
+            case "task-description":
+                setTaskInfo(prevVal => ({...prevVal, taskDescription: e.target.value}))
+                break;
+            case "focus-duration":
+                setTaskInfo(prevVal => ({...prevVal, focusDuration: e.target.value}))
+                break;
+            case "break-duration":
+                setTaskInfo(prevVal => ({...prevVal, breakDuration: e.target.value}))
+                break;
+            default:
+                break;
+        }
+    }
+
+    const addTaskHandler = (e) => {
+        e.preventDefault();
+        setTasks(prevVal => [...prevVal, taskInfo])
+        modalSwitch()
+    }
+
     return (
-        <div classname="modal-container">
+        <div className="modal-container">
             <div className="modal" onClick={modalSwitch}></div>
                 <div className="modal-content">
                     <div className="modal-header">
@@ -11,20 +48,19 @@ export const Modal = ({modalSwitch}) => {
                         </div>
                     </div>
                     <div className="modal-body">
-                        <form className="add-task-form">
-                            <div className="input input-label-pair input-success">
+                        <form className="add-task-form" onSubmit={addTaskHandler}>
+                            <div className={`input input-label-pair input-${taskTitle.length>=5 ? "success" : taskTitle.length===0 ? "error" : "warning" }`}>
                                 <label className="input-label" htmlFor="task-name">Task Name</label>
-                                <input type="text" name="task-name" placeholder="Please enter the name of your task" />
-                                <div className="input-validation-success input-validation">Input Validation Successful</div>
+                                <input type="text" value={taskTitle} name="task-name" onChange={taskOnChangeHandler} placeholder="Please enter the name of your task" />
                             </div>
-                            <div className="input input-label-pair input-success">
+                            <div className={`input input-label-pair input-${taskDescription.length>=10 ? "success" : taskDescription.length===0 ? "error" : "warning" }`}>
                                 <label className="input-label" htmlFor="task-description">Task Description</label>
-                                <textarea name="task-description" id="" cols="20"  rows="5" placeholder="Please describe your task briefly"></textarea>
-                                <div className="input-validation-success input-validation">Input Validation Successful</div>
+                                <textarea name="task-description" value={taskDescription} onChange={taskOnChangeHandler} cols="20"  rows="5" placeholder="Please describe your task briefly"></textarea>
+                                <div className={`input-validation-${taskDescription.length>=10 && taskTitle.length>=5 ? "success" : taskDescription.length===0 || taskTitle.length===0 ? "error" : "warning" } input-validation`}>{taskTitle.length >= 5 && taskDescription.length>=10 ? "Task Info validation successful!" : taskTitle.length===0 || taskDescription.length===0 ? "Please enter a task name and task description" : "Try a longer name or description" }</div>
                             </div>
-                            <div class="input input-label-pair input-slider">
+                            <div className="input input-label-pair input-slider">
                                 <label className="input-label" htmlFor="focus-duration">Focus Duration</label>
-                                <input name="focus-duration" step={10} type="range" min="25" value={45} max="75" list="focus-data" />
+                                <input name="focus-duration" step={10} onChange={taskOnChangeHandler} type="range" min="25" value={focusDuration} max="75" list="focus-data" />
                                 <datalist id="focus-data">
                                     <option value="25" label="25m"></option>
                                     <option value="35" label="35m"></option>
@@ -34,9 +70,9 @@ export const Modal = ({modalSwitch}) => {
                                     <option value="75" label="75m"></option>
                                 </datalist>
                             </div>
-                            <div class="input input-label-pair input-slider">
+                            <div className="input input-label-pair input-slider">
                                 <label className="input-label break-slider" htmlFor="break-duration">Break Duration</label>
-                                <input name="break-duration" step={5} type="range" min="5" value={15} max="30" list="break-data" />
+                                <input name="break-duration" step={5} onChange={taskOnChangeHandler} type="range" min="5" value={taskInfo.breakDuration} max="30" list="break-data" />
                                 <datalist id="break-data">
                                     <option value="5" label="5m"></option>
                                     <option value="10" label="10m"></option>
@@ -46,11 +82,11 @@ export const Modal = ({modalSwitch}) => {
                                     <option value="30" label="30m"></option>
                                 </datalist>
                             </div>
+                            <div className="modal-action">
+                                <button className="button" onClick={modalSwitch}>Close</button>
+                                <button type="submit" className="button" disabled={taskTitle.length<=5 || taskDescription.length<=10}>Add</button>
+                            </div>
                         </form>
-                    </div>
-                    <div className="modal-action">
-                        <button className="button" onClick={modalSwitch}>Close</button>
-                        <button className="button">Add</button>
                     </div>
                 </div>
         </div>

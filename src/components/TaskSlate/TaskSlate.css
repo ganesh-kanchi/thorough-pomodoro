@@ -6,7 +6,16 @@
     display: flex;
     justify-content: space-between;
     margin: 8px auto 8px auto;
+    gap: 2rem;
 }
+
+
+.task-slate .task-description{
+    flex-grow: 0;
+    overflow-x: hidden;
+    word-wrap: normal;
+}
+
 
 .task-slate .task-actions{
     display: flex;
