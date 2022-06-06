@@ -72,7 +72,7 @@ export const Modal = ({modalSwitch, setTasks}) => {
                             </div>
                             <div className="input input-label-pair input-slider">
                                 <label className="input-label break-slider" htmlFor="break-duration">Break Duration</label>
-                                <input name="break-duration" step={5} onChange={taskOnChangeHandler} type="range" min="5" value={taskInfo.breakDuration} max="30" list="break-data" />
+                                <input name="break-duration" step={5} onChange={taskOnChangeHandler} type="range" min="5" value={breakDuration} max="30" list="break-data" />
                                 <datalist id="break-data">
                                     <option value="5" label="5m"></option>
                                     <option value="10" label="10m"></option>
