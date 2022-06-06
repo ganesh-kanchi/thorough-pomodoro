@@ -1,7 +1,14 @@
 import "./TaskSlate.css";
 
-export const TaskSlate = (props) => {
-    const {taskTitle, focusDuration, breakDuration} = props.taskInfo;
+export const TaskSlate = ({taskInfo, setTasks, id}) => {
+    const {taskTitle, focusDuration, breakDuration} = taskInfo;
+
+    const deleteTaskHandler = () => {
+        setTasks(prevVal=>{
+            return prevVal.filter(task=>  task.id!== id)
+        })
+    }
+
 
     return (
         <div className="task-slate">
@@ -11,7 +18,7 @@ export const TaskSlate = (props) => {
             </div>
             <div className="task-actions">
                 <i className="fa-solid fa-pen-to-square edit-task-icon"></i>
-                <i className="fa-solid fa-trash-can delete-icon"></i>
+                <i className="fa-solid fa-trash-can delete-icon" onClick={deleteTaskHandler}></i>
             </div>
         </div>
     )

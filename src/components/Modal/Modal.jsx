@@ -34,8 +34,17 @@ export const Modal = ({modalSwitch, setTasks}) => {
 
     const addTaskHandler = (e) => {
         e.preventDefault();
-        setTasks(prevVal => [...prevVal, {...taskInfo, id: uuidv4()}])
+        setTasks(prevVal => {
+            return [...prevVal, {...taskInfo, id: uuidv4()}]
+        })
         modalSwitch()
+        setTaskInfo({
+            id: "",
+            taskTitle: "",
+            taskDescription: "",
+            focusDuration: 45,
+            breakDuration: 15
+        })
     }
 
     return (
@@ -43,9 +52,7 @@ export const Modal = ({modalSwitch, setTasks}) => {
             <div className="modal" onClick={modalSwitch}></div>
                 <div className="modal-content">
                     <div className="modal-header">
-                        <div className="heading-2 modal-title">
-                            Add Task
-                        </div>
+                        <div className="heading-2 modal-title"> Add Task </div>
                     </div>
                     <div className="modal-body">
                         <form className="add-task-form" onSubmit={addTaskHandler}>
