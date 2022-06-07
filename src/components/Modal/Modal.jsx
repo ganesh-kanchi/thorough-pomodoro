@@ -1,15 +1,9 @@
-import { useState } from "react";
 import "./Modal.css";
 import { v4 as uuidv4 } from "uuid";
+import { useTasks } from "../../contexts/tasksContext";
 
 export const Modal = ({modalSwitch, setTasks}) => {
-    const [ taskInfo, setTaskInfo ] = useState({
-        id: "",
-        taskTitle: "",
-        taskDescription: "",
-        focusDuration: 45,
-        breakDuration: 15
-    })
+    const {taskInfo, setTaskInfo} = useTasks();    
 
     const {taskTitle, taskDescription, focusDuration, breakDuration} = taskInfo;
 

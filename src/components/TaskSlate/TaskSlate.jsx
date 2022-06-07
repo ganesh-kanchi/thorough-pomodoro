@@ -1,6 +1,8 @@
+import { useTasks } from "../../contexts/tasksContext";
 import "./TaskSlate.css";
 
-export const TaskSlate = ({taskInfo, setTasks, id}) => {
+export const TaskSlate = ({ id }) => {
+    const {taskInfo, setTasks} = useTasks();
     const {taskTitle, focusDuration, breakDuration} = taskInfo;
 
     const deleteTaskHandler = () => {
