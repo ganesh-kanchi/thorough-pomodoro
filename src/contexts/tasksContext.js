@@ -1,24 +1,16 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
+import { tasksReducer } from "../reducer/tasksReducer";
 
 const TasksContext = createContext([]);
 
-const TasksProvider = ({children}) => {
-    const [ taskInfo, setTaskInfo ] = useState({
-        id: "",
-        taskTitle: "",
-        taskDescription: "",
-        focusDuration: 45,
-        breakDuration: 15
-    })
-    const [ modal, setModal ] = useState(false);
-    const [ tasks, setTasks ] = useState([]); 
-
-    const modalSwitch = () => {
-        setModal(prev=> !prev)
-    }
+const TasksProvider = ({ children }) => {
+    
+    const [ taskState, tasksDispatch ] = useReducer(tasksReducer, {tasks:[]});     
 
     return (
-        <TasksContext.Provider value={{taskInfo, setTaskInfo, modal, modalSwitch, tasks, setTasks}}>children</TasksContext.Provider>
+        <TasksContext.Provider value={{ taskState, tasksDispatch }}>
+            {children}
+        </TasksContext.Provider>
     )
 }
 

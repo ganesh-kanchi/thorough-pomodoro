@@ -9,11 +9,17 @@
     gap: 2rem;
 }
 
+.task-slate .modal-container{
+    display: contents;
+}
+
 
 .task-slate .task-description{
     flex-grow: 0;
+    flex-shrink: 0;
     overflow-x: hidden;
     word-wrap: normal;
+    text-align: left;
 }
 
 
