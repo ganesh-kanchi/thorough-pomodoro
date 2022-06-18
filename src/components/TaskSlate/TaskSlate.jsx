@@ -2,6 +2,7 @@ import { useTasks } from "../../contexts/tasksContext";
 import { useState } from "react";
 import "./TaskSlate.css";
 import { Modal } from "../Modal/Modal";
+import { Link } from "react-router-dom";
 
 export const TaskSlate = ({ id, task }) => {
 
@@ -31,10 +32,12 @@ export const TaskSlate = ({ id, task }) => {
           setEditModal={setEditModal}
         />
       )}
-            <div className="task-description">
-                <div className="task-title">{task.taskTitle}</div>
-                <div className="task-details">{`Focus duration: ${focusDuration}mins, Break duration: ${breakDuration}mins`}</div>
-            </div>
+            <Link to="/pomodoro" state={{taskDetails: task}} className="pomodoro-link" >
+                <div className="task-description">
+                    <div className="task-title">{task.taskTitle}</div>
+                    <div className="task-details">{`Focus duration: ${focusDuration}mins, Break duration: ${breakDuration}mins`}</div>
+                </div>
+            </Link>
             <div className="task-actions">
                 <i className="fa-solid fa-pen-to-square edit-task-icon" onClick={editTaskHandler}></i>
                 <i className="fa-solid fa-trash-can delete-icon" onClick={deleteTaskHandler}></i>

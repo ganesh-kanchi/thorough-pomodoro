@@ -36,6 +36,11 @@
     gap: 1rem;
 }
 
+.task-slate .pomodoro-link{
+    text-decoration: none;
+    color: black;
+}
+
 .task-description .task-title{
     padding-bottom: 1rem;
     font-size: 1.75rem;
