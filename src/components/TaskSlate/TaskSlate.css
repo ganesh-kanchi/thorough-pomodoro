@@ -39,6 +39,7 @@
 .task-slate .pomodoro-link{
     text-decoration: none;
     color: black;
+    flex-grow: 1;
 }
 
 .task-description .task-title{
