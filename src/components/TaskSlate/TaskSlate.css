@@ -9,6 +9,10 @@
     gap: 2rem;
 }
 
+.task-slate:hover{
+    border-color: var(--hover-effect);
+}
+
 .task-slate .modal-container{
     display: contents;
 }
@@ -56,6 +60,14 @@
     color: var(--dark-red);
 }
 
+.delete-icon:hover{
+    color: var(--danger-bg-color);
+}
+
 .edit-task-icon{
     color: var(--hover-effect);
+}
+
+.edit-task-icon:hover{
+    color: var(--dimmer-primary-color);
 }
