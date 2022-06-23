@@ -8,3 +8,30 @@
 a{
   text-decoration: none;
 }
+
+.dark-theme-background{
+  background-color: var(--dark-theme-primary);
+}
+
+.dark-theme-text{
+  color: white;
+}
+
+.page-container .dark-theme-secondary{
+  background-color: var(--dark-theme-secondary);
+  color: var(--white);
+}
+
+.page-container .dark-theme-secondary a{
+  color: var(--primary-color);
+}
+
+.page-container .dark-theme-secondary .button{
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.page-container .dark-theme-secondary i{
+  color: var(--white);
+}
+

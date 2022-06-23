@@ -3,10 +3,7 @@
     gap: 2rem;
     justify-content: space-around;
     align-items: center;
-    width: 80vw;
-    height: auto;
-    position:static;
-    margin: 2rem auto 2rem auto;
+    min-height: calc(100vh - 5.15rem);
 }
 
 .homepage-content img{
@@ -27,6 +24,11 @@
 .homepage-links{
     display: flex;
     justify-content: center;
+}
+
+.page-container .img-credit-link{
+    display: block;
+    width: 100vw;
 }
 
 @media screen and (max-width: 800px) {

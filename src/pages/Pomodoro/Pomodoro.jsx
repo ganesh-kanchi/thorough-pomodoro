@@ -3,13 +3,14 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./Pomodoro.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useTheme } from "../../contexts/themeContext";
 
 export const Pomodoro = () => {
     const locate = useLocation()
     const navigation = useNavigate()
+    const { theme } = useTheme()
+
     const { taskTitle, taskDescription, focusDuration, breakDuration } = locate.state.taskDetails;
 
     const [pomodoroStage, setPomodoroStage] = useState("focus");
@@ -69,9 +70,9 @@ export const Pomodoro = () => {
       },[]);
 
     return (
-        <div className="page-container">
+        <div className={`page-container ${theme && "dark-theme-background"}`}>
             <Navbar />
-            <main className="page-content pomodoro-page">
+            <main className={`page-content pomodoro-page `}>
                 <section className="pomodoro-section">
                     <button className="button primary-button" onClick={()=>navigation("/tasks")}>Back to tasks</button>
                     <div className="pomodoro-container">

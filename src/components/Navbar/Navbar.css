@@ -14,6 +14,11 @@
     text-decoration: none;
 }
 
+.main-navigation .nav-link-btn{
+    color: var(--hover-effect);
+    font-size: x-large;
+}
+
 .brand-tag{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: bolder;

@@ -2,12 +2,15 @@ import { Navbar } from "../../components/Navbar/Navbar"
 import Timer from "../../assets/technique.png"
 import "./Homepage.css"
 import { Link } from "react-router-dom"
+import { useTheme } from "../../contexts/themeContext"
 
 export const Homepage = () => {
+    const {theme} = useTheme();
+
     return (
         <div className="page-container">
             <Navbar />
-            <main className="page-content homepage-content">
+            <main className={`page-content homepage-content ${theme && " dark-theme-background dark-theme-text"}`}>
                 <div className="homepage-text">
                     <div className="heading-1">An easy to use pomodoro for an effective human.</div>
                     <div className="homepage-links">
@@ -17,7 +20,7 @@ export const Homepage = () => {
                 </div>
                 <img src={Timer} alt="pomodoro technique" />
             </main>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.flaticon.com/free-icons/pomodoro" title="pomodoro icons">Pomodoro icons created by Flat Icons - Flaticon</a>
+            <a target="_blank" rel="noopener noreferrer" className={`img-credit-link ${theme && " dark-theme-background dark-theme-text"}`} href="https://www.flaticon.com/free-icons/pomodoro" title="pomodoro icons">Pomodoro icons created by Flat Icons - Flaticon</a>
         </div>
     )
 }

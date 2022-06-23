@@ -1,14 +1,14 @@
 .tasks-page-content{
     text-align: left;
     width: 90vw;
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto 0 auto;
 }
 
 .tasks-section{
     background-color: var(--primary-color);
     padding: 2rem;
     border-radius: 1.5rem;
-    min-height: calc(100vh - 18rem);
+    min-height: calc(100vh - 16rem);
 }
 
 .tasks-heading{
