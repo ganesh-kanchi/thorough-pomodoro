@@ -11,7 +11,7 @@ export const Homepage = () => {
                 <div className="homepage-text">
                     <div className="heading-1">An easy to use pomodoro for an effective human.</div>
                     <div className="homepage-links">
-                        <a className="button" href="http://https://medium.com/keep-productive/how-to-use-a-pomodoro-timer-f9d172132981" target="_blank" rel="noopener noreferrer">What is Pomodoro technique?</a>
+                        <a className="button" href="https://medium.com/keep-productive/how-to-use-a-pomodoro-timer-f9d172132981" target="_blank" rel="noopener noreferrer">What is Pomodoro technique?</a>
                         <Link to="/tasks" className="button">Go to the App</Link>
                     </div>
                 </div>
