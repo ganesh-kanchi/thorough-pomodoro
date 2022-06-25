@@ -3,9 +3,12 @@ import Timer from "../../assets/technique.png"
 import "./Homepage.css"
 import { Link } from "react-router-dom"
 import { useTheme } from "../../contexts/themeContext"
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle"
 
 export const Homepage = () => {
     const {theme} = useTheme();
+
+    useDocumentTitle(`Home | Thorough Pomodoro`)
 
     return (
         <div className="page-container">
