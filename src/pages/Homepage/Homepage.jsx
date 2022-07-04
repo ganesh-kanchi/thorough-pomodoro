@@ -1,6 +1,7 @@
 import { Navbar } from "../../components/Navbar/Navbar"
 import Timer from "../../assets/technique.png"
 import "./Homepage.css"
+import { Link } from "react-router-dom"
 
 export const Homepage = () => {
     return (
@@ -11,7 +12,7 @@ export const Homepage = () => {
                     <div className="heading-1">An easy to use pomodoro for an effective human.</div>
                     <div className="homepage-links">
                         <a className="button" href="https://medium.com/keep-productive/how-to-use-a-pomodoro-timer-f9d172132981" target="_blank" rel="noopener noreferrer">What is Pomodoro technique?</a>
-                        <a className="button" href="/pomodoro" target="_blank" rel="noopener noreferrer">Go to the App</a>
+                        <Link to="/tasks" className="button">Go to the App</Link>
                     </div>
                 </div>
                 <img src={Timer} alt="pomodoro technique" />

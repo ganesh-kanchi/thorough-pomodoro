@@ -1,0 +1,55 @@
+.task-slate{
+    background-color: var(--grey);
+    padding: 1rem;
+    border:  3px solid var(--white) ;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px auto 8px auto;
+    gap: 2rem;
+}
+
+.task-slate .modal-container{
+    display: contents;
+}
+
+
+.task-slate .task-description{
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow-x: hidden;
+    word-wrap: normal;
+    text-align: left;
+}
+
+
+.task-slate .task-actions{
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+    align-items: center ;
+}
+
+.task-description{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-description .task-title{
+    padding-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight:700;
+}
+
+.task-description .task-details{
+    font-size: 1.1rem;
+}
+
+.delete-icon{
+    color: var(--dark-red);
+}
+
+.edit-task-icon{
+    color: var(--hover-effect);
+}
