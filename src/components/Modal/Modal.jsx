@@ -41,14 +41,6 @@ export const Modal = ({
             tasksDispatch({type: "ADD_NEW_TASK", payload: {...taskInfo, id: uuidv4()}})
             modalSwitch()
         }
-
-        // setTaskInfo({
-        //     id: "",
-        //     taskTitle: "",
-        //     taskDescription: "",
-        //     focusDuration: 45,
-        //     breakDuration: 15
-        // })
     }
 
     return (
@@ -94,8 +86,8 @@ export const Modal = ({
                                 </datalist>
                             </div>
                             <div className="modal-action">
-                                <button className="button" onClick={() => editModal ? setEditModal(prev=> !prev) : modalSwitch() }>Close</button>
-                                <button type="submit" className="button" disabled={taskInfo.taskTitle.length<=5 || taskInfo.taskDescription.length<=10}>{editModal?"Edit":"Add"}</button>
+                                <button className="button modal-button" onClick={() => editModal ? setEditModal(prev=> !prev) : modalSwitch() }>Close</button>
+                                <button type="submit" className="button modal-button" disabled={taskInfo.taskTitle.length<=5 || taskInfo.taskDescription.length<=10}>{editModal?"Edit":"Add"}</button>
                             </div>
                         </form>
                     </div>

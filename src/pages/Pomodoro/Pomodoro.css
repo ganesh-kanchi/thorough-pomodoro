@@ -1,0 +1,96 @@
+.pomodoro-page{
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100vw;
+    height: calc(100vh - 6rem);
+    margin: 1rem;
+    padding: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+}
+
+.pomodoro-page section{
+    border-radius: 2rem;
+    padding: 1rem;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(196, 195, 195);
+    align-content: center;
+}
+
+.pomodoro-page .pomodoro-container{
+    max-width: 55%;
+    align-items: center;
+    margin: 1rem auto 1rem auto;
+}
+
+
+.pomodoro-page .button{
+    margin-left: 0;
+    align-self: flex-start;
+}
+
+.pomodoro-page .task-section .task-description{
+    text-align: left;
+    font-size: 2rem;
+}
+
+.pomodoro-page .task-section .task-title{
+    font-weight: bolder;
+}
+
+.pomodoro-page .pomodoro-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem;
+}
+    
+.pomodoro-actions :nth-child(1) { 
+    grid-area: 1 / 1 / 2 / 2;
+    margin: 0;
+ }
+
+.pomodoro-actions :nth-child(2) { 
+    grid-area: 1 / 2 / 2 / 3;
+    margin: 0;
+ }
+
+.pomodoro-actions :nth-child(3) { 
+    grid-area: 2 / 1 / 3 / 3;
+    margin: 0;
+ }
+
+ .pomodoro-actions .button{
+    border: 1px solid var(--primary-color);
+ }
+
+ .pomodoro-actions .button:hover{
+    background-color: var(--primary-color);
+    border-color: var(--hover-effect);
+ } 
+
+
+ @media screen and (max-width: 750px) {
+    .pomodoro-page{
+        flex-wrap: wrap;
+    }
+    
+    .pomodoro-page .pomodoro-container{
+        max-width: 50%;
+
+    }
+ }
+
+ @media screen and (max-width: 350px) {
+    .pomodoro-page section{
+        height: auto;
+    }
+
+    .pomodoro-page .pomodoro-container{
+        max-width: 75%;
+    }
+ }

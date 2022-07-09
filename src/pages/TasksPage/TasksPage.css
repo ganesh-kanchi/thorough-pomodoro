@@ -18,6 +18,16 @@
     margin-bottom: 1rem;
 }
 
+.add-tasks-button{
+    box-sizing: border-box;
+    border: 2px solid var(--primary-color);
+}
+
+.add-tasks-button:hover{
+    background-color: var(--primary-color);
+    border-color: var(--hover-effect);
+}
+
 .tasks-page-content .page-sub-heading{
     margin-bottom: 1rem;
 }
