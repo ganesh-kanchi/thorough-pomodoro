@@ -1,5 +1,8 @@
 :root{
   --dark-red: rgb(167, 2, 2);
+  --light-theme-primary: #4290F5;
+  --dark-theme-primary: #0A1D21;
+  --dark-theme-secondary: #12343B;
 }
 
 *{
