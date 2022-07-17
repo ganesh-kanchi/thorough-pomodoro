@@ -5,6 +5,7 @@ import { useTasks } from "../../contexts/tasksContext";
 import { useState } from "react";
 import "./TasksPage.css";
 import { useTheme } from "../../contexts/themeContext";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 export const TasksPage = () =>{
 
@@ -13,6 +14,8 @@ export const TasksPage = () =>{
     const [ modal, setModal ] = useState(false);
     
     const {taskState} = useTasks();
+
+    useDocumentTitle(`Tasks | Thorough Pomodoro`)
 
     const modalSwitch = () => {
         setModal(prev=> !prev)

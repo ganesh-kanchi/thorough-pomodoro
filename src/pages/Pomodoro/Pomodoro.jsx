@@ -5,6 +5,7 @@ import "./Pomodoro.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { useTheme } from "../../contexts/themeContext";
+import { useDocumentTitle } from "../../customHooks/useDocumentTitle";
 
 export const Pomodoro = () => {
     const locate = useLocation()
@@ -62,7 +63,9 @@ export const Pomodoro = () => {
         secondsRef.current = focusMinutes * 60;
         setSeconds(focusMinutes * 60);
         pomodoroStageRef.current = "focus";
-      }
+    }
+
+    useDocumentTitle(`${minutesRemaining} : ${secondsRemaining} | ${pomodoroStage.toUpperCase()} | Pomodoro`)
 
     useEffect(() => {
         setSeconds(focusMinutes * 60);
